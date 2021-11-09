@@ -37,7 +37,10 @@ const SimpleWebview = ({webviewParam}) => {
         </View>
       ) : (
         <WebView
-          source={{uri: 'https://familyselfcare.pimster.app'}} //Replace with your Pimster URL
+          source={{
+            uri: 'https://familyselfcare.pimster.app',
+            headers: {'Accept-Language': 'en'},
+          }} //Replace with your Pimster URL
           allowsInlineMediaPlayback={true} //Mandatory to preserve quality user experience while viewing stories
           mediaPlaybackRequiresUserAction={false}
           allowsBackForwardNavigationGestures
