@@ -9,7 +9,12 @@ import React, {useEffect, useState} from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
 import WebView from 'react-native-webview';
 
-const Webview = ({webviewParam}: any) => {
+type Props = {
+  url: string;
+  webviewParam?: any;
+};
+
+const Webview = ({url, webviewParam}: Props) => {
   const [isConnected, setIsConnected] = useState<boolean | null>(false);
   const [updating, setUpdating] = useState<boolean>(true);
 
@@ -32,9 +37,9 @@ const Webview = ({webviewParam}: any) => {
       ) : (
         <WebView
           source={{
-            uri: 'https://familyselfcare.pimster.app',
+            uri: url,
             headers: {'Accept-Language': 'en'},
-          }} //Replace with your Pimster URL
+          }}
           allowsInlineMediaPlayback={true} //Mandatory to preserve quality user experience while viewing stories
           mediaPlaybackRequiresUserAction={false}
           allowsBackForwardNavigationGestures

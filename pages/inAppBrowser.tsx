@@ -1,3 +1,4 @@
+import {PIMSTER_URL} from '@env';
 import React from 'react';
 import {Button, StyleSheet, View} from 'react-native';
 import {openBrowser} from '../components/inAppBrowser';
@@ -7,7 +8,7 @@ const BrowserPage = () => {
     <View style={styles.container}>
       <Button
         title="Open In App Browser"
-        onPress={() => openBrowser({url: 'https://familyselfcare.pimster.app'})}
+        onPress={() => openBrowser({url: PIMSTER_URL})}
       />
     </View>
   );
